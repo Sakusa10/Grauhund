@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="horzPrototype.PinpadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:horzPrototype"
+        mc:Ignorable="d"
+        d:DesignHeight="768" d:DesignWidth="1024">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Height="402" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center" Width="672">
+           <Run Text = "Please use the pinpad to complete transaction" FontSize="72"></Run>
+        </TextBlock>
+    </Grid>
+
+</UserControl>

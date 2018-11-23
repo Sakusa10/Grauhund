@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="horzPrototype.ThankYouWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:horzPrototype"
+        mc:Ignorable="d"
+        d:DesignHeight="768" d:DesignWidth="1024">
+    
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Height="567" TextAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="688" FontSize="72" Margin="164,170,164,0">      
+            <Run Text="Thank You For Choosing "></Run><LineBreak/>
+            <Run Text="Grauhund Transport"></Run><LineBreak/><LineBreak/>
+            <Run Text="Please be at the terminal 30 minutes before departure." FontSize="32"></Run>
+        </TextBlock>
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="horzPrototype.HelpCheckIn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:horzPrototype"
+        mc:Ignorable="d"
+        d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid>
+
+        <!--Top Bar-->
+        <Rectangle Fill="#4689B6" Height="74" Stroke ="White"  VerticalAlignment="Top" StrokeThickness="0"/>
+
+        <Button HorizontalAlignment="Left" Margin="94,7,0,0" VerticalAlignment="Top" Width="60" Height="60"  Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Home_Click">
+            <Image Height="35" Width="35" Source="images\Home Icon.png" Stretch="Fill" Margin="0,-5,-1,0"/>
+
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="60" Height="60"  Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Back_Click">
+            <Image Height="35" Width="35" Source="images\back Icon.png" Stretch="Fill" Margin="-3,-2,0,0"/>
+
+        </Button>
+
+        <!--Title Block-->
+        <Rectangle Height="130" Margin="200,100,200,0" Stroke="Black" StrokeThickness = "2" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF25709B" Offset="0.52"/>
+                    <GradientStop Color="#FF4689B6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock TextAlignment="Center" Height="85" Margin="200,125,200,0" 
+                   TextWrapping="Wrap" Text="Check In &amp; Departure" VerticalAlignment="Top" FontSize="50" FontWeight="Bold" Foreground="#F5F5F5"/>
+
+        <!--Contents-->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="384" VerticalAlignment="Top" Width="1018" Margin="0,282,0,0">
+            <RichTextBox HorizontalAlignment="Center" Margin="125,0,125,0" Height="384" Width="768" VerticalScrollBarVisibility="Auto" FontSize="20">
+                <FlowDocument>
+                    <Paragraph>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vel orci ac velit laoreet condimentum eu ut elit. Suspendisse potenti. Cras rutrum magna lorem, ut commodo metus elementum at. Suspendisse potenti. Cras molestie, nisi id vehicula pretium, sapien lorem sagittis metus, sit amet consequat neque nunc in mi. Vivamus urna purus, ullamcorper ut facilisis vitae, tincidunt eget quam. Ut vitae nisl tincidunt, maximus ipsum eget, volutpat enim. Integer rhoncus magna leo, a vehicula turpis tincidunt in. Morbi eleifend posuere consectetur. Suspendisse sit amet dui a elit sollicitudin viverra.
+                    </Paragraph>
+                    <Paragraph>
+                        Integer suscipit imperdiet urna, sed efficitur justo pretium sit amet. Etiam sed lacus sollicitudin, pulvinar lectus et, congue nisl. Sed placerat sed odio sit amet eleifend. Vivamus eget augue egestas, facilisis mauris eget, ultrices nisl. Nunc mattis nisl eget erat pretium condimentum. Vivamus consequat velit ut augue pretium, ut hendrerit magna auctor. Cras maximus porta est at mollis. Nulla sodales, mi nec pharetra sodales, magna sapien tristique lectus, nec pretium libero nulla a dolor. Praesent mollis imperdiet dictum. Vestibulum in iaculis metus, sed condimentum velit. Aliquam porttitor sagittis sollicitudin. Nulla facilisi.
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+        </StackPanel>
+
+    </Grid>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source= "styles\RoundedButton.xaml"/>
+                <ResourceDictionary Source= "styles\GlassButtonCircle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+</UserControl>

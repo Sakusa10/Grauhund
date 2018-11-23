@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="horzPrototype.BackConfirm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:horzPrototype"
+             mc:Ignorable="d" 
+             d:DesignHeight="270" d:DesignWidth="400">
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Left" Height="70" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="380" Orientation="Horizontal">
+            <Button HorizontalAlignment="Left" Margin="0,0,10,0" Width="180" Style ="{DynamicResource RoundedButton}" BorderBrush="#95FFFFFF" Click="Button_Cancel">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                        <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock TextWrapping="Wrap" Text="Yes" FontSize="36" HorizontalAlignment="Center"/>
+            </Button>
+            <Button HorizontalAlignment="Left" Height="70" Margin="10,0,0,0" Width="180" Style ="{DynamicResource RoundedButton}" BorderBrush="#95FFFFFF" VerticalAlignment="Bottom" Click="Button_GoBack">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                        <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <TextBlock TextWrapping="Wrap" Text="No" FontSize="36" HorizontalAlignment="Center"/>
+            </Button>
+        </StackPanel>
+        <Label Content="Your session will not &#xA;be saved, are you sure&#xA;you want to go back?" FontSize="36" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="380"/>
+    </Grid>
+</UserControl>

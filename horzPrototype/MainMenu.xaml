@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="horzPrototype.MainMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:horzPrototype"
+             mc:Ignorable="d" 
+             d:DesignHeight="768" d:DesignWidth="1024">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="619" VerticalAlignment="Top" Width="996" Margin="10,108,0,0">
+            <Label Content="" Width="135"/>
+
+            <Button Height="545" Margin="0,10,0,0" VerticalAlignment="Top" Width="185" Click="Button_Click_BUY_TICKETS" Style="{DynamicResource RoundedButton}" BorderBrush="#95FFFFFF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                        <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Height="545" Width="165">
+                    <Label Content="" Height="61"/>
+                    <TextBlock HorizontalAlignment="Center" Height="245" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontSize="40" FontWeight="Medium" Text="Buy Tickets" Width="165"/>
+                    <Label Content="" Height="35"/>
+                    <Image Height="138" Source="images\BuyTicket Icon.png" Stretch="Fill"/>
+
+
+                </StackPanel>
+
+            </Button>
+
+            <Label Content="" Width="90"/>
+
+            <Button Height="545" Margin="0,10,0,0" VerticalAlignment="Top" Width="185" Style ="{DynamicResource RoundedButton}"  Click="Button_Click_PICK_UP" BorderBrush="#95FFFFFF">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                        <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Height="545" Width="165">
+                    <Label Content="" Height="61"/>
+                    <TextBlock HorizontalAlignment="Center" Height="245" TextWrapping="WrapWithOverflow" TextAlignment="Center" FontSize="40" FontWeight="Medium" Text="Pick Up Tickets" Width="165"/>
+                    <Label Content="" Height="9"/>
+                    <Image Height="215" Source="images\Pickup.png" Stretch="Fill"/>
+                </StackPanel>
+            </Button>
+
+            <Label Content="" Width="90"/>
+            <StackPanel Width="203" Margin="0,10,0,64">
+                <Button HorizontalAlignment="Left" Height="250" Margin="0,0,0,0" Width="185" Click="Button_Click_ROUTE" Style ="{DynamicResource RoundedButton}" BorderBrush="#95FFFFFF">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                            <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <StackPanel Height="190" Width="175">
+                        <TextBlock Height="174" TextWrapping="WrapWithOverflow" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Medium" Width="165" Margin="0,40,0,0"><Run Text="Route"/><LineBreak/><Run Text="Info"/></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Height="250" Margin="0,44,0,0" Width="185" Click="Button_Click_BAG_TAGS" Style ="{DynamicResource RoundedButton}" BorderBrush="#95FFFFFF">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                            <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <StackPanel Height="190" Width="175">
+                        <TextBlock Height="174" TextWrapping="WrapWithOverflow" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontWeight="Medium" Width="165" Margin="0,40,0,0">
+                            <Run Text="Buy Extra"/>
+                            <LineBreak/>
+                            <Run Text="Bag Tags"/></TextBlock>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Rectangle Fill="#4689B6" Height="74" Stroke ="White"  VerticalAlignment="Top" StrokeThickness="0"/>
+        <Button HorizontalAlignment="Left" Margin="954,7,0,0" VerticalAlignment="Top" Width="60" Height="60" Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Help_Click">
+            <Image Height="35" Width="32" Source="images\Help Icon.png" Stretch="Fill" Margin="0,0,-2,0"/>
+
+        </Button>
+        
+    </Grid>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source= "styles\RoundedButton.xaml"/>
+                <ResourceDictionary Source= "styles\GlassButtonCircle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+</UserControl>

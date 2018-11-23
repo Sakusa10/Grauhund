@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="horzPrototype.Departures"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:horzPrototype"
+        mc:Ignorable="d"
+        d:DesignHeight="768" d:DesignWidth="1024">
+    <UserControl.Resources>
+        <Style TargetType="ScrollBar">
+            <Setter Property="Width" Value="25"/>
+        </Style>
+        <Style x:Key="styleCalendar" TargetType="{x:Type Calendar}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Calendar}">
+                        <Viewbox Height="400"
+                         Width="400">
+                            <CalendarItem x:Name="PART_CalendarItem"
+                                  Background="{TemplateBinding Background}"
+                                  BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}"/>
+                        </Viewbox>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="0,0,0,-19" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Height="131" Margin="0,212,0,0" Stroke="Black" StrokeThickness = "2" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF25709B" Offset="0.52"/>
+                    <GradientStop Color="#FF4689B6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle Height="82" Margin="293,100,297,0" Stroke="Black" StrokeThickness = "2" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF25709B" Offset="0.52"/>
+                    <GradientStop Color="#FF4689B6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <TextBlock HorizontalAlignment="Center" Height="61" Margin="293,113,299,0" 
+            TextWrapping="Wrap" Text="Departures - Calgary" TextAlignment="Center" VerticalAlignment="Top" FontSize="36" FontWeight="Bold" Width="432" Foreground="#F5F5F5"/>
+        <Rectangle Fill="#4689B6" Height="74" Stroke ="White"  VerticalAlignment="Top" StrokeThickness="0"/>
+        <Button HorizontalAlignment="Left" Margin="954,7,0,0" VerticalAlignment="Top" Width="60" Height="60" Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Help_Click">
+            <Image Height="35" Width="32" Source="images\Help Icon.png" Stretch="Fill" Margin="0,0,-2,0"/>
+
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="94,7,0,0" VerticalAlignment="Top" Width="60" Height="60"  Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Home_Click">
+            <Image Height="35" Width="35" Source="images\Home Icon.png" Stretch="Fill" Margin="0,-5,-1,0"/>
+
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="60" Height="60"  Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Back_Click">
+            <Image Height="35" Width="35" Source="images\back Icon.png" Stretch="Fill" Margin="-3,-2,0,0"/>
+
+        </Button>
+        <Label x:Name="label1" Content="Departs at" HorizontalAlignment="Left" Height="47" Margin="94,362,0,0" VerticalAlignment="Top" Width="148" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.596,0.532"/>
+        <Label x:Name="label1_Copy" Content="Destination" HorizontalAlignment="Left" Height="47" Margin="245,362,0,0" VerticalAlignment="Top" Width="148" FontSize="22" FontWeight="Bold" RenderTransformOrigin="1.557,0.489"/>
+        <Label x:Name="label1_Copy1" Content="Bus #" HorizontalAlignment="Left" Height="47" Margin="407,362,0,0" VerticalAlignment="Top" Width="89" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.596,0.532"/>
+
+        <Border BorderBrush="Black" BorderThickness="2" HorizontalAlignment="Left" Height="295" Margin="559,415,0,0" VerticalAlignment="Top" Width="386"/>
+        <TextBlock x:Name="NoRouteLabel" Height="47" Margin="556,535,82,0" VerticalAlignment="Top" TextAlignment="Center" FontSize="22" RenderTransformOrigin="0.596,0.532"/>
+        <Label x:Name="BusNumberLabel" Content="" HorizontalAlignment="Left" Height="47" Margin="573,418,0,0" VerticalAlignment="Top" Width="372" FontSize="22" RenderTransformOrigin="0.596,0.532"/>
+        <Label x:Name="DepartTimeLabel" Content="" HorizontalAlignment="Left" Height="47" Margin="573,487,0,0" VerticalAlignment="Top" Width="372" FontSize="22" RenderTransformOrigin="0.596,0.532"/>
+        <Label x:Name="ArrivalTimeLabel" Content="" HorizontalAlignment="Left" Height="47" Margin="573,524,0,0" VerticalAlignment="Top" Width="372" FontSize="22" RenderTransformOrigin="0.596,0.532"/>
+        <Label x:Name="DestinationLabel" Content="" HorizontalAlignment="Left" Height="47" Margin="573,452,0,0" VerticalAlignment="Top" Width="372" FontSize="22" RenderTransformOrigin="0.596,0.532"/>
+        <TextBlock x:Name="extra" HorizontalAlignment="Left" Height="139" Margin="573,571,0,0" VerticalAlignment="Top" Width="372" FontSize="18" TextWrapping="Wrap" RenderTransformOrigin="0.596,0.532">
+
+        </TextBlock>
+
+        <TextBox x:Name="searchBox" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Controls:TextBoxHelper.Watermark="Search for a destination or bus number..." 
+                 HorizontalAlignment="Left" Height="44" Margin="90,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="420" FontSize="18.667" TextChanged="searchBox_TextChanged"/>
+
+        <Label x:Name="label1_Copy9" Content="Details:" HorizontalAlignment="Left" Height="47" Margin="558,362,0,0" VerticalAlignment="Top" Width="266" FontSize="22" FontWeight="Bold" RenderTransformOrigin="0.849,0.882"/>
+        <Label Foreground="#F5F5F5" x:Name="label1_Copy3" Content="Search departures:" HorizontalAlignment="Left" Height="47" Margin="86,220,0,0" VerticalAlignment="Top" Width="372" FontSize="24" FontWeight="Bold"/>
+        <Label Foreground="#F5F5F5" x:Name="label1_Copy4" Content="Pick a date:" HorizontalAlignment="Left" Height="47" Margin="555,220,0,0" VerticalAlignment="Top" Width="170" FontSize="24" FontWeight="Bold"/>
+        <Image Source="images/search.png" x:Name="image" HorizontalAlignment="Left" Height="38" Margin="465,276,0,0" VerticalAlignment="Top" Width="41"/>
+
+        <ListBox x:Name="routeList" HorizontalAlignment="Left" Height="295" Margin="90,408,0,0" VerticalAlignment="Top" Width="442" SelectionChanged="routeList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding DepTime}" FontSize= "28" FontWeight ="Medium"/>
+                        <TextBlock Grid.Column="1" Text="{Binding City}" FontSize= "28"/>
+                        <TextBlock Grid.Column="2" Text="{Binding BusCode}" FontSize= "28" FontWeight="DemiBold"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="BorderBrush" Value="Black"/>
+                    <Setter Property="BorderThickness" Value="1"/>
+                    <Setter Property="Height" Value="80"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+
+        <Viewbox HorizontalAlignment="Left" VerticalAlignment="Top" Height="46" Margin="566,270,0,0" Width="450">
+            <DatePicker x:Name="datePicker" Width="216" Height="27" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="11" SelectedDateChanged="datePicker_SelectedDateChanged">
+                <DatePicker.Resources>
+                    <Style TargetType="DatePickerTextBox">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="IsEnabled" Value="False" />
+                        <Setter Property="IsHitTestVisible" Value="False"/>
+                    </Style>
+                </DatePicker.Resources>
+            </DatePicker>
+        </Viewbox>
+
+    </Grid>
+</UserControl>

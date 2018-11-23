@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="horzPrototype.ConfirmationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:horzPrototype"
+        mc:Ignorable="d"
+        d:DesignHeight="768" d:DesignWidth="1024">
+
+    <Grid Width="1024" Height="768">
+        
+        <Rectangle Fill="#4689B6" Height="74" Stroke ="White"  VerticalAlignment="Top" StrokeThickness="0"/>
+        <Button HorizontalAlignment="Left" Margin="954,7,0,0" VerticalAlignment="Top" Width="60" Height="60" Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Help_Click">
+            <Image Height="35" Width="32" Source="images\Help Icon.png" Stretch="Fill" Margin="0,0,-2,0"/>
+
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="94,7,0,0" VerticalAlignment="Top" Width="60" Height="60"  Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Home_Click">
+            <Image Height="35" Width="35" Source="images\Home Icon.png" Stretch="Fill" Margin="0,-5,-1,0"/>
+
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="10,7,0,0" VerticalAlignment="Top" Width="60" Height="60"  Style="{DynamicResource GlassButtonCircle}" Background="White" Click="Back_Click">
+            <Image Height="35" Width="35" Source="images\back Icon.png" Stretch="Fill" Margin="-3,-2,0,0"/>
+
+        </Button>
+
+        <Rectangle Height="130" Margin="200,100,200,0" Stroke="Black" StrokeThickness = "2" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF25709B" Offset="0.52"/>
+                    <GradientStop Color="#FF4689B6"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <TextBlock HorizontalAlignment="Left" Height="106" Margin="200,125,0,0" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Top" Width="624" FontWeight="Bold" Foreground="#F5F5F5">
+           <Run Text = "Confirm Your Order" FontSize="48"></Run>
+
+        </TextBlock>
+
+        <Button HorizontalAlignment="Left" Height="105" Margin="341,0,0,63" Width="342" Click="Button_Click_CONTINUE" Style ="{DynamicResource RoundedButton}" BorderBrush="#95FFFFFF" VerticalAlignment="Bottom">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1A75A8" Offset="0.267"/>
+                    <GradientStop Color="#FF7FAFDE" Offset="0.6"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <TextBlock x:Name="print" TextWrapping="Wrap" Text="" FontSize="36" HorizontalAlignment="Center"/>
+        </Button>
+        
+        <Grid HorizontalAlignment="Center" Height="337" Margin="0,70,0,0" VerticalAlignment="Center" Width="749">
+            <TextBlock x:Name ="header" HorizontalAlignment="Left" Margin="0,1,0,0" Height="72" TextWrapping="Wrap" Text=" 12:15 PM                       Calgary -> Edmonton" VerticalAlignment="Top" Width="800" FontSize="36"/>
+            <Rectangle Fill="#4689B6" Height="8" Stroke ="White"  VerticalAlignment="Top" StrokeThickness="0" Margin="0,52,0,0"/>
+            <Rectangle Fill="#4689B6" Height="8" Stroke ="White"  VerticalAlignment="Top" StrokeThickness="0" Margin="0,260,0,0"/>
+            <TextBlock HorizontalAlignment="Left" Margin="0,270,0,0" TextWrapping="Wrap" Width="504" FontSize="36">
+                <Run   Text=" Total Owing&#x09;&#x09;" FontSize="36"></Run><LineBreak/>
+            </TextBlock>
+            <TextBlock x:Name="totalOwed" HorizontalAlignment="Left" Margin="594,270,0,0" TextWrapping="Wrap" Width="185" FontSize="36">
+                <Run   Text="$ 290.00" FontSize="36"></Run><LineBreak/>
+            </TextBlock>
+        </Grid>
+
+        <ListBox x:Name="orderInfo" HorizontalAlignment="Left" Height="195" Margin="138,310,0,0" VerticalAlignment="Top" Width="749" ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Disabled" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,5">
+                        <Grid.RowDefinitions>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="55"/>
+                            <ColumnDefinition Width="500" />
+                            <ColumnDefinition Width="54"/>
+                            <ColumnDefinition Width="37" />
+                            <ColumnDefinition Width="37"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding numTickets}" Height="30" FontSize= "22" FontWeight ="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="1" Text="{Binding ticketType}" Height="30" FontSize= "22" FontWeight ="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="2" Text="$ " Height="30" FontSize="22" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="3" Text="{Binding ticketPrice}" Height="30" FontSize="22" FontWeight="Bold" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <TextBlock Grid.Column="4" Text=".00 " Height="30" FontSize="22" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Rectangle Fill="Transparent" Height="330" Width="750" Stroke ="#000000" HorizontalAlignment="Center" VerticalAlignment="Top" StrokeThickness="2" Margin="0,250,0,0"/>
+
+
+    </Grid>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source= "styles\RoundedButton.xaml"/>
+                <ResourceDictionary Source= "styles\GlassButtonCircle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+</UserControl>
